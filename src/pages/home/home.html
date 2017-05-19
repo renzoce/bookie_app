@@ -1,0 +1,14 @@
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let room of rooms">
+      <ion-avatar item-left>
+        <img src="assets/img/placeholder_room.png">
+      </ion-avatar>
+      <h2>{{room.name}}</h2>
+      <div style="clear: both;">
+        <p class="room-address">{{room.address}}</p>
+        <p class="room-price">{{room.pricePerHour}}</p>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
