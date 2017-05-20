@@ -38,6 +38,7 @@ export class HomePage {
     this.rooms.push(room1);
     this.rooms.push(room2);
     this.rooms.push(room3);
+    this.rooms.push(room1);
   }
 
 }
