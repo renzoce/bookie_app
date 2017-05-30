@@ -1,18 +1,25 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Room } from './../../model/room';
+import { RoomService } from './../../services/room-service';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  styleUrls: [ '/pages/home/home.scss' ]
+  styleUrls: ['/pages/home/home.scss']
 })
 export class HomePage {
 
   rooms: Room[] = [];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private roomService: RoomService) { }
 
+  ionViewWillEnter() {
+    this.roomService.getRooms()
+      .then(rooms => this.rooms = rooms)
+  }
+
+  getSampleData(): void {
     let room1: Room = new Room();
     let room2: Room = new Room();
     let room3: Room = new Room();
