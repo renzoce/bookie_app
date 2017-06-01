@@ -1,6 +1,23 @@
+<ion-header no-border>
+  <ion-toolbar color="toolbar_color">
+    <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Bookie</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let room of rooms">
+    <button ion-item *ngFor="let room of rooms" (click)="roomSelected(room)">
       <ion-avatar item-left>
         <img src="assets/img/placeholder_room.png">
       </ion-avatar>
@@ -9,6 +26,6 @@
         <p class="room-address">{{room.address}}</p>
         <p class="room-price">{{room.pricePerHour}}</p>
       </div>
-    </ion-item>
+    </button>
   </ion-list>
 </ion-content>

@@ -16,7 +16,13 @@ export class HomePage {
 
   ionViewWillEnter() {
     this.roomService.getRooms()
-      .then(rooms => this.rooms = rooms)
+      .then(rooms => this.rooms = rooms, reason => {
+        this.getSampleData()
+      });
+  }
+
+  roomSelected(room: Room) {
+    console.log("Selected Room", room.name);
   }
 
   getSampleData(): void {
