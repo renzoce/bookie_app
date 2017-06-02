@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Room } from './../../model/room';
 import { RoomService } from './../../services/room-service';
+import { RoomDetail } from './../room-detail/room-detail';
 
 @Component({
   selector: 'page-home',
@@ -22,7 +23,10 @@ export class HomePage {
   }
 
   roomSelected(room: Room) {
-    console.log("Selected Room", room.name);
+    this.navCtrl.push(RoomDetail, {
+      id: "123",
+      name: "Carl"
+    });
   }
 
   getSampleData(): void {

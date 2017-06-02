@@ -8,6 +8,8 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { RoomDetail } from '../pages/room-detail//room-detail';
+
 
 import { RoomService } from '../services/room-service';
 
@@ -20,7 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    RoomDetail
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    RoomDetail
   ],
   providers: [
     RoomService,
