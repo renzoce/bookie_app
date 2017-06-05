@@ -9,12 +9,15 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RoomDetail } from '../pages/room-detail//room-detail';
+import { Booking } from './../pages/booking/booking';
 
 
 import { RoomService } from '../services/room-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { CalendarModule } from 'angular-calendar';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    RoomDetail
+    RoomDetail,
+    Booking
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    CalendarModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    RoomDetail
+    RoomDetail,
+    Booking
   ],
   providers: [
     RoomService,
