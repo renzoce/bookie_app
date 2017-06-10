@@ -31,6 +31,7 @@ export class HomePage {
   }
 
   getSampleData(): void {
+    this.rooms = [];
     let room1: Room = new Room();
     let room2: Room = new Room();
     let room3: Room = new Room();
