@@ -32,7 +32,7 @@
   min-height: 78px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
-          flex: 1; }
+          flex: 1;}
 
 .cal-month-view .cal-cell-row {
   display: -webkit-box;
@@ -122,7 +122,7 @@
   cursor: default; }
 
 .cal-month-view .cal-day-cell.cal-weekend .cal-day-number {
-  color: darkred; }
+ }
 
 .cal-month-view .cal-day-cell.cal-today {
   background-color: #e8fde7; }

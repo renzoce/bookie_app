@@ -5,32 +5,25 @@
 	<ion-title text-center padding>Reserva tu sala!</ion-title>
 </ion-header>
 
-<ion-content padding>
-	<div class="calendar-comp">
-		<template #headerTemp>
-		<div class="cal-cell-row">
-			<div class="cal-cell cal-past columnHeader" *ngFor="let label of days_label">
-				 {{label}}
-			</div>
-		</div>
-	</template>
-		<mwl-calendar-month-view [viewDate]="date" (dayClicked)="dayClicked($event.day)" [events]="calEvents" [headerTemplate]="headerTemp">
-		</mwl-calendar-month-view>
-	</div>
-	<ion-list *ngIf="availability">
-		<ion-item>
-			<ion-label>En que horario?</ion-label>
-			<ion-select interface="popover" (ionChange)='selectedHour()' [(ngModel)]="hourSelected">
-				<ion-option *ngFor="let hour of hours">{{hour}}</ion-option>
-			</ion-select>
-		</ion-item>
-	</ion-list>
-	<ion-list *ngIf="availability">
-		<ion-item>
-			<ion-label>Por cuanto tiempo?</ion-label>
-			<ion-select interface="popover" [(ngModel)]="timeSelected">
-				<ion-option *ngFor="let hour of time">{{hour}}</ion-option>
-			</ion-select>
-		</ion-item>
-	</ion-list>
+<!-- nuestro calendario -->
+<ion-content>
+	<calendar-component [availability]="availableDay"></calendar-component>
 </ion-content>
+
+
+<ion-list *ngIf="availability">
+	<ion-item>
+		<ion-label>En que horario?</ion-label>
+		<ion-select interface="popover" (ionChange)='selectedHour()' [(ngModel)]="hourSelected">
+			<ion-option *ngFor="let hour of hours">{{hour}}</ion-option>
+		</ion-select>
+	</ion-item>
+</ion-list>
+<ion-list *ngIf="availability">
+	<ion-item>
+		<ion-label>Por cuanto tiempo?</ion-label>
+		<ion-select interface="popover" [(ngModel)]="timeSelected">
+			<ion-option *ngFor="let hour of time">{{hour}}</ion-option>
+		</ion-select>
+	</ion-item>
+</ion-list>

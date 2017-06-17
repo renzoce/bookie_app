@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { Booking } from './../booking/booking';
-import { RoomService } from './../../services/room-service';
+import { RehearsalRoomService } from './../../services/rehearsal-room-service';
 import { AvailableDay } from './../../model/availableDay';
 
 @Component({
@@ -12,7 +12,7 @@ import { AvailableDay } from './../../model/availableDay';
 
 export class RoomDetail {
   availableDay: AvailableDay[] = [];
-  constructor(private navParams: NavParams, public navCtrl: NavController, private roomService: RoomService, public loadingCtrl: LoadingController) {
+  constructor(private navParams: NavParams, public navCtrl: NavController, private rehearsalRoomService: RehearsalRoomService, public loadingCtrl: LoadingController) {
     let id = navParams.get('id');
     let name = navParams.get('name');
   }
@@ -26,7 +26,7 @@ export class RoomDetail {
       content: contentWait
     });
     loader.present();
-    this.roomService.getAvailability()
+    this.rehearsalRoomService.getAvailability(1)
       .then(availableDay => {
         this.availableDay = availableDay
         loader.dismiss();

@@ -10,9 +10,11 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RoomDetail } from '../pages/room-detail//room-detail';
 import { Booking } from './../pages/booking/booking';
+import { CalendarComponent } from './../miscellaneous/calendar-component';
 
 
 import { RoomService } from '../services/room-service';
+import { RehearsalRoomService } from '../services/rehearsal-room-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +29,8 @@ import { CalendarModule } from 'angular-calendar';
     HomePage,
     TabsPage,
     RoomDetail,
-    Booking
+    Booking,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +46,12 @@ import { CalendarModule } from 'angular-calendar';
     HomePage,
     TabsPage,
     RoomDetail,
-    Booking
+    Booking,
+    CalendarComponent
   ],
   providers: [
     RoomService,
+    RehearsalRoomService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
