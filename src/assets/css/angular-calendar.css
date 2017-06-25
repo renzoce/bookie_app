@@ -65,7 +65,15 @@
 
 .cal-month-view .cal-days .cal-cell-row {
   border-bottom: 1px solid #e1e1e1; }
-
+.weekdays {
+      margin:0 3px;
+      text-align: center;
+      width: 100%;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+}
 .cal-month-view .cal-day-badge {
   margin-top: 18px;
   margin-left: 10px;
@@ -128,7 +136,8 @@
   background-color: #e8fde7; }
 
 .cal-month-view .cal-day-cell.cal-today .cal-day-number {
-  font-size: 1.9em; }
+  font-size: 1.2em;
+  color:#661aff !important;}
 
 .cal-month-view .cal-day-cell.cal-drag-over {
   background-color: #e0e0e0 !important; }

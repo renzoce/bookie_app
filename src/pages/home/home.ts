@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Room } from './../../model/room';
 import { RoomService } from './../../services/room-service';
 import { RoomDetail } from './../room-detail/room-detail';
-import { Booking } from './../booking/booking';
+import { BookingPage } from './../booking/booking';
 
 @Component({
   selector: 'page-home',

@@ -1,6 +1,6 @@
 export class AvailableDay {
-  dateDay: string;
-  AvailableHour: [{
+  day: string;
+  availableHours: [{
     hour: number,
     duration: number
   }]

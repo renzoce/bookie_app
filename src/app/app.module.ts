@@ -9,12 +9,13 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { RoomDetail } from '../pages/room-detail//room-detail';
-import { Booking } from './../pages/booking/booking';
+import { BookingPage } from './../pages/booking/booking';
 import { CalendarComponent } from './../miscellaneous/calendar-component';
 
 
 import { RoomService } from '../services/room-service';
 import { RehearsalRoomService } from '../services/rehearsal-room-service';
+import { BookingService } from '../services/booking-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,7 +30,7 @@ import { CalendarModule } from 'angular-calendar';
     HomePage,
     TabsPage,
     RoomDetail,
-    Booking,
+    BookingPage,
     CalendarComponent
   ],
   imports: [
@@ -46,11 +47,12 @@ import { CalendarModule } from 'angular-calendar';
     HomePage,
     TabsPage,
     RoomDetail,
-    Booking,
+    BookingPage,
     CalendarComponent
   ],
   providers: [
     RoomService,
+    BookingService,
     RehearsalRoomService,
     StatusBar,
     SplashScreen,

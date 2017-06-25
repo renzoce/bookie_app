@@ -1,18 +1,20 @@
   <div class="calendar-comp">
     <template #headerTemp>
 		<div class="cal-cell-row">
-			<div class="cal-cell cal-past columnHeader" *ngFor="let label of days_label">
+			<div class="weekdays" *ngFor="let label of days_label">
 				 {{label}}
 			</div>
 		</div>
 	</template>
   </div>
 
-  <div class="text-center">
-    <button  block ion-button  round (click)="refreshView()">Refresh + re-render the current view</button>
-  </div>
-
   <div [ngSwitch]="view">
-    <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" [refresh]="refresh"  [headerTemplate]="headerTemp" [dayModifier]="addCssClass">
+    <mwl-calendar-month-view *ngSwitchCase="'month'"
+    [viewDate]="viewDate"
+    [events]="events" [refresh]="refresh"
+    [headerTemplate]="headerTemp"
+    [dayModifier]="addCssClass"
+    (dayClicked)="dayClicked($event.day)"
+    >
     </mwl-calendar-month-view>
   </div>

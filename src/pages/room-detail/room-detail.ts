@@ -2,7 +2,7 @@ import { NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
-import { Booking } from './../booking/booking';
+import { BookingPage } from './../booking/booking';
 import { RehearsalRoomService } from './../../services/rehearsal-room-service';
 import { AvailableDay } from './../../model/availableDay';
 
@@ -30,7 +30,7 @@ export class RoomDetail {
       .then(availableDay => {
         this.availableDay = availableDay
         loader.dismiss();
-        this.navCtrl.push(Booking, {availableDay});
+        this.navCtrl.push(BookingPage, {availableDay});
       }, reason => { });
   }
 }

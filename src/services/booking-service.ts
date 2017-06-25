@@ -2,20 +2,20 @@ import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import { Room } from './../model/room';
+import { Booking } from './../model/booking';
 
 @Injectable()
-export class RoomService {
+export class BookingService {
 
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private roomsUrl = 'http://54.191.139.3:3000/rooms';
+  private roomsUrl = 'http://localhost:3000/bookings';
 
   constructor(private http: Http) { }
 
-  getRooms(): Promise<Room[]> {
-    return this.http.get(this.roomsUrl)
+  saveBooking(booking: Booking): Promise<Booking> {
+    return this.http.post(this.roomsUrl, JSON.stringify({booking: booking}), {headers: this.headers})
       .toPromise()
-      .then(response => response.json() as Room[])
+      .then(response => response.json() as Booking)
       .catch(this.handleError);
   }
   private handleError(error: any): Promise<any> {
