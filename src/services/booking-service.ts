@@ -8,7 +8,7 @@ import { Booking } from './../model/booking';
 export class BookingService {
 
   private headers = new Headers({ 'Content-Type': 'application/json' });
-  private roomsUrl = 'http://localhost:3000/bookings';
+  private roomsUrl = 'http://54.191.139.3:3000/bookings';
 
   constructor(private http: Http) { }
 

@@ -3,6 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 import { AvailableDay } from './../model/availableDay';
+import { RehearsalRoom } from './../model/rehearsalRoom';
 
 @Injectable()
 export class RehearsalRoomService {
@@ -17,6 +18,13 @@ export class RehearsalRoomService {
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as AvailableDay[])
+      .catch(this.handleError);
+  }
+  getRehearsalRoom(): Promise<RehearsalRoom[]> {
+    const url = `${this.baseUrl}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json() as RehearsalRoom[])
       .catch(this.handleError);
   }
 

@@ -17,14 +17,15 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let room of rooms" (click)="roomSelected(room)">
+    <button ion-item *ngFor="let room of rehearsalRoom" (click)="roomSelected(room)">
       <ion-avatar item-left>
-        <img src="assets/img/placeholder_room.png">
+        <img src={{room.mainImgUrl}}/>
       </ion-avatar>
       <h2>{{room.name}}</h2>
+      <span class="room-price">{{room.pricePerHour}}</span>
       <div style="clear: both;">
-        <p class="room-address">{{room.address}}</p>
-        <p class="room-price">{{room.pricePerHour}}</p>
+        <span class="room-address">{{room.address}}</span>
+        <rating class="rating-home" [(ngModel)]="room.rating"  readOnly="true" max="5" nullable="false"></rating>
       </div>
     </button>
   </ion-list>

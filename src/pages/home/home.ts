@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Room } from './../../model/room';
-import { RoomService } from './../../services/room-service';
+import { RehearsalRoom } from './../../model/rehearsalRoom';
 import { RoomDetail } from './../room-detail/room-detail';
-import { BookingPage } from './../booking/booking';
+import { RehearsalRoomService } from './../../services/rehearsal-room-service';
 
 @Component({
   selector: 'page-home',
@@ -12,52 +11,51 @@ import { BookingPage } from './../booking/booking';
 })
 export class HomePage {
 
-  rooms: Room[] = [];
+  rehearsalRoom: RehearsalRoom[] = [];
 
-  constructor(public navCtrl: NavController, private roomService: RoomService) { }
+  constructor(public navCtrl: NavController, private rehearsalRoomService: RehearsalRoomService) { }
 
   ionViewWillEnter() {
-    this.roomService.getRooms()
-      .then(rooms => this.rooms = rooms, reason => {
+    this.rehearsalRoomService.getRehearsalRoom()
+      .then(rehearsalRoom => this.rehearsalRoom = rehearsalRoom, reason => {
         this.getSampleData()
       });
   }
 
-  roomSelected(room: Room) {
+  roomSelected(room: RehearsalRoom) {
     this.navCtrl.push(RoomDetail, {
-      id: "123",
-      name: "Carl"
+      roomSelected: room
     });
   }
 
   getSampleData(): void {
-    this.rooms = [];
-    let room1: Room = new Room();
-    let room2: Room = new Room();
-    let room3: Room = new Room();
+    this.rehearsalRoom = [];
+    let room1: RehearsalRoom = new RehearsalRoom();
+    let room2: RehearsalRoom = new RehearsalRoom();
+    let room3: RehearsalRoom = new RehearsalRoom();
 
     room1.name = "nombre1";
     room1.address = "direccion1";
-    room1.summary = "Resumen1";
+    room1.description = "descripcion!!";
     room1.pricePerHour = 150.5;
     room1.cellPhone = "094000001";
 
     room2.name = "nombre2";
     room2.address = "direccion2";
-    room2.summary = "Resumen2";
+    room2.description = "Resumen2";
     room2.pricePerHour = 200;
     room2.cellPhone = "094000002";
 
     room3.name = "nombre3";
     room3.address = "direccion3";
-    room3.summary = "Resumen3";
+    room3.description = "Resumen3";
     room3.pricePerHour = 250.5;
     room3.cellPhone = "094000003";
 
-    this.rooms.push(room1);
-    this.rooms.push(room2);
-    this.rooms.push(room3);
-    this.rooms.push(room1);
+    this.rehearsalRoom.push(room1);
+    this.rehearsalRoom.push(room2);
+    this.rehearsalRoom.push(room3);
+    this.rehearsalRoom.push(room1);
   }
 
 }

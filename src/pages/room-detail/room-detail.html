@@ -6,29 +6,30 @@
 
 <ion-content>
   <ion-card>
-    <img src="assets/img/bjork-live.jpg"/>
+    <img src={{room.mainImgUrl}}/>
     <ion-card-content>
       <ion-card-title>
-        Björk
+        {{room.name}}
       </ion-card-title>
       <p>
-        Björk first came to prominence as one of the lead vocalists of the avant pop Icelandic sextet the Sugarcubes, but when...
+        {{room.description}}
       </p>
     </ion-card-content>
     <ion-item>
-      <button  large block ion-button icon-only round (click)="reserve()">Reservervar
+      <button large block ion-button icon-only round (click)="reserve()">Reservar
         <ion-icon ios="ios-book" md="md-book"></ion-icon>
       </button>
     </ion-item>
     <ion-item>
-      <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
-      Albums
-      <ion-badge item-end>9</ion-badge>
+      <ion-icon name='ios-locate-outline' item-start style="color: #55acee"></ion-icon>
+      {{room.address}}
+      <ion-badge item-end>$ {{room.pricePerHour}}</ion-badge>
     </ion-item>
-    <ion-item>
-      <ion-icon name='logo-twitter' item-start style="color: #55acee"></ion-icon>
-      Followers
-      <ion-badge item-end>260k</ion-badge>
+
+    <ion-item >
+      <ion-icon class="phone-icon" name='ios-phone-portrait-outline' item-start style="color: #d03e84"></ion-icon>
+      <span >{{room.cellPhone}}</span>
+      <rating class="rating-detail" [(ngModel)]="room.rating"  readOnly="true" max="5"></rating>
     </ion-item>
   </ion-card>
 </ion-content>

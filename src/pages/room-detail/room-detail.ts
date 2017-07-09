@@ -1,20 +1,27 @@
 import { NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { RehearsalRoom } from './../../model/rehearsalRoom';
 import { LoadingController } from 'ionic-angular';
 import { BookingPage } from './../booking/booking';
 import { RehearsalRoomService } from './../../services/rehearsal-room-service';
 import { AvailableDay } from './../../model/availableDay';
 
 @Component({
+  selector: 'page-room-detail',
   templateUrl: 'room-detail.html',
+  styleUrls: ['/room-detail.scss']
 })
 
 export class RoomDetail {
   availableDay: AvailableDay[] = [];
+  room: RehearsalRoom = null;
+  
   constructor(private navParams: NavParams, public navCtrl: NavController, private rehearsalRoomService: RehearsalRoomService, public loadingCtrl: LoadingController) {
-    let id = navParams.get('id');
-    let name = navParams.get('name');
+    this.room = this.navParams.get('roomSelected');
+  }
+  ionViewWillEnter() {
+
   }
 
   reserve() {

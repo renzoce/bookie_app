@@ -1,0 +1,34 @@
+.rating-detail {
+  font-size: 20px;
+  float: right;
+  color: #3385ff;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 2px !important;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .phone-icon {
+    position: relative;
+    bottom: 28px;
+  }
+
+  .rating-detail {
+    float: none;
+    text-align: center;
+
+    ul {
+      width: calc(100% - 50px) !important;
+      margin-top: 30px;
+
+      li {
+        padding: 6px !important;
+      }
+    }
+  }
+}

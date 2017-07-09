@@ -7,3 +7,32 @@ page-home {
     float: right;
   }
 }
+
+h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
+}
+
+.room-address {
+  width: calc( 100% - 90px );
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rating-home {
+  float: right;
+  color: #3385ff;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 13px;
+      padding: 0 !important;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import { NavParams } from 'ionic-angular';
-import { Input, Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import { AvailableDay } from './../../model/availableDay';
 import { Booking } from './../../model/booking';
 import { BookingService } from './../../services/booking-service';
@@ -64,7 +64,6 @@ export class BookingPage {
 
 
   sendMockBooking() {
-    //this.booking.bookingId = 1;
     this.booking.duration = 120;
     this.booking.startDate = "2017-06-26";
     this.booking.startTime = 900;

@@ -1,12 +1,12 @@
 export class RehearsalRoom {
   rehearsalRoomId: number;
+  pricePerHour:number;
   name: string;
   address: string;
-  username: string;
   latitude: string;
   longitude: string;
-  cellphone: string;
+  cellPhone: string;
   mainImgUrl: string;
-  aboutMe: string;
+  description: string;
   rating: number;
 }
